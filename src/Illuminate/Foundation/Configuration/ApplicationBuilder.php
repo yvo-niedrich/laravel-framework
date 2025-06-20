@@ -376,7 +376,7 @@ class ApplicationBuilder
         $using ??= fn () => true;
 
         $this->app->afterResolving(
-            \Illuminate\Foundation\Exceptions\Handler::class,
+            \Illuminate\Contracts\Debug\ExceptionHandler::class,
             fn ($handler) => $using(new Exceptions($handler)),
         );
 
